@@ -79,6 +79,8 @@ docs: # Steps to configurate challenges for the lab
     steps:    
     - title: What is web log analysis?
       text: docs/step1/text.md
+      #verify: docs/step1/verify.sh
+      #points: 100
     - title: GoAccess in action
       text: docs/step2/text.md
     - title: GoAccess metrics

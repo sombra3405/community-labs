@@ -1,0 +1,93 @@
+###################################
+# Metadata Laboratory 
+###################################
+version: 0.1
+name: web-log-analysis-goaccess
+icon: https://static.onlylabs.io/category/logging.svg
+category: Logging 
+infrastructure: k8s
+title: "Real-time Web log analysis with Goaccess"
+active: True
+description: |
+  In this laboratory you will learn the basics of webserver log analysis 
+  with web traffic using GoAccess
+access: basic # Type of subscription: basic, premium
+difficulty: easy # easy, medium or hard
+time: 1 # Hours 
+skills_required:
+  - None
+skills_learn:
+  - "GoAccess"
+  - "Web Server Logs"
+  - "Logging"
+  - "Traffic"
+tags:
+  - "webserver"
+  - "monitoring"
+repository: "https://github.com/onlylabs/private-labs.git"
+repo_lab_path: "labs/web-log-analysis-goaccess"
+
+# Image displayed at home page -318x90
+thumb_image: thumb.png
+# Image displayed at 890x150
+cover_image: cover.png
+
+references:
+  - url: https://goaccess.io/
+    title: "Official GoAccess Documentation"
+    type: link
+  - url: https://github.com/allinurl/goaccess
+    title: "Github GoAccess Repository" 
+    type: link    
+  - url: https://www.youtube.com/results?search_query=goaccess
+    title: "Youtube Related Videos" 
+    type: link
+  - url: https://docs.nginx.com/
+    title: "Official Nginx Documentation"
+    type: link
+  - url: https://httpd.apache.org/docs/
+    title: "Official Apache Documentation"
+    type: link
+
+software:
+  - name: GoAccess
+    url: https://goaccess.io/download
+    license: https://github.com/allinurl/goaccess/blob/master/COPYING
+    version: 1.5.6
+
+diagram: # script for diagram map of the lab
+  script: "resources/diagram.py" 
+  path_image: "https://static.onlylabs.io/labs/web-log-analysis-goaccess/diagram.png"
+
+# Install
+vdi_workspace:
+  image: vdi-workspace
+
+install: # Steps to install components in the lab
+  - name: nginx-demo-simple-gallery-goaccess
+    helm_repository: oci://registry.onlylabs.io/helm
+    helm_package_name: nginx-demo-simple-gallery-goaccess
+    helm_package_version: 0.1.0
+    helm_values_path: helm-values/values.yaml
+
+# Documentation for the lab
+docs: # Steps to configurate challenges for the lab
+  title: Web Log Analysis with Goaccess
+  details:
+    intro:
+      text: docs/intro.md
+    steps:    
+    - title: What is web log analysis?
+      text: docs/step1/text.md
+    - title: GoAccess in action
+      text: docs/step2/text.md
+    - title: GoAccess metrics
+      text: docs/step3/text.md
+    - title: GoAccess metrics
+      text: docs/step4/text.md
+    - title: GoAccess metrics
+      text: docs/step5/text.md
+    - title: GoAccess metrics
+      text: docs/step6/text.md
+    finish:
+      text: docs/finish.md
